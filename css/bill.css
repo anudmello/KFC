@@ -33,7 +33,21 @@
   list-style: none;
 }
 .bill ol li {
-  padding: 10px 20px;
+  padding: 20px 20px;
   background-color: #ccc;
   border-bottom: 1px dashed #000;
+}
+@media print{
+  .hideprint{
+      display: none;
+  }
+  .col-4{
+    width: 100% !important;
+  }
+  
+}
+.btnrem{
+  font-size: 16px !important;
+  background-color: transparent;
+  border: none;
 }

@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/bill.css">
     <title>BILLING SOFTWARE</title>
+
 </head>
 <body>
 <!--Git ADDED & MODIFIED-->
   <div class="container-fluid">
-      <div class="row">
+      <div class="row hideprint">
           <div class="col-4">
             <label for="">Customer Name</label> <input type="text" class="form-control" id="custname" onchange="show()">
           </div>
@@ -25,8 +26,8 @@
       </div>
 
       <div class="row">
-          <div class="col-8">
-            <div class="billProd">
+          <div class="col-8 hideprint">
+            <div class="billProd ">
                 <h3 align="center">Total Products Available</h3>
                 <table>
                     <tr>
@@ -46,7 +47,7 @@
                 </table>
               </div>
           </div>
-          <div class="col-4">
+          <div class="col">
             <div class="billGen">
                 <h5 align="center">Bill No : #10232</h5>
                 <div class="row">
@@ -63,7 +64,7 @@
                     </ol>
                 </div>
                 <b>Total: <span id="total"></span></b>
-                <button class="print btn btn-success">
+                <button class="print btn btn-success hideprint" onclick="printshow()">
                     Print
                 </button>
             </div>
@@ -75,7 +76,7 @@
   <script>
       var sum = 0;
       function add(product, price){
-          var str = "<div id='p"+product+"'><li>"+product+" - "+price+" <i class='fa fa-inr'></i><button onclick=remove('"+product+"')> - </button></li></div>";
+          var str = "<div id='p"+product+"'><li>"+product+" - "+price+" <i class='fa fa-inr'></i><button onclick=remove('"+product+"') class=' btnrem float-right hideprint'> <i class='fa fa-times'></i> </button></li></div>";
         document.getElementById("list").innerHTML += str;
          sum = price+sum;
          document.getElementById("total").innerHTML = sum+"<i class='fa fa-inr'></i>";
@@ -86,6 +87,9 @@
       }
       function remove(product){
         document.getElementById("p"+product).innerHTML = "";
+      }
+      function printshow(){
+          window.print();
       }
   </script>
 </body>
