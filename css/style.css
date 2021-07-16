@@ -58,3 +58,14 @@
     float: left;
     
 }
+
+
+/********************** ADMIN CSS ***************************/
+.adminlog{
+    width: 40%;
+    padding: 36px;
+}
+.adminlog{
+    border: 1px solid #000;
+    border-radius: 15px;
+}
